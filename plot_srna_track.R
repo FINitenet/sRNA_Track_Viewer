@@ -23,16 +23,6 @@ if(!suppressPackageStartupMessages(require(IRanges))) {
   stop("R package IRanges is required, but could not be loaded. Make sure it is installed!")
 }
 
-# require samtools be findable by Sys.which
-if (grepl('samtools', as.vector(Sys.which("samtools"))[1]) == FALSE) {
-  stop(paste("Function sRNA_depth_by_size requires executable samtools, but",
-             "samtools was not found in the PATH : ", Sys.getenv("PATH")))
-}
-# require tabix be findable by Sys.which
-if (grepl('tabix', as.vector(Sys.which("tabix"))[1]) == FALSE) {
-  stop(paste("Function sRNA_depth_by_size requires executable tabix, but",
-             "tabix was not found in the PATH : ", Sys.getenv("PATH")))
-}
 
 # parse coords
 pdf_file <- "test.pdf"
